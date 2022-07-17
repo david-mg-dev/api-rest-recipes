@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "recipes")
@@ -42,8 +43,11 @@ public class Recipe {
     @Column
     private String category;
 
+    @Column
+    private Date dateCreate;
 
-    public Recipe(Long id, String title, String description, String timeCook, Integer serves, String imageUrl, String difficulty, String ingredients, String instruction, String category) {
+
+    public Recipe(Long id, String title, String description, String timeCook, Integer serves, String imageUrl, String difficulty, String ingredients, String instruction, String category, Date dateCreate) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -54,6 +58,7 @@ public class Recipe {
         this.ingredients = ingredients;
         this.instruction = instruction;
         this.category = category;
+        this.dateCreate = dateCreate;
     }
 
 
