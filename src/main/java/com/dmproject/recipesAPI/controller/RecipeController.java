@@ -2,7 +2,6 @@ package com.dmproject.recipesAPI.controller;
 
 
 import com.dmproject.recipesAPI.entity.Recipe;
-import com.dmproject.recipesAPI.repository.RecipeRepository;
 import com.dmproject.recipesAPI.service.recipe.RecipeServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
