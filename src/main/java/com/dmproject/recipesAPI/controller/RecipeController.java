@@ -14,11 +14,20 @@ public class RecipeController {
     private final RecipeServiceImpl recipeService;
 
 
-    public RecipeController(RecipeServiceImpl recipeService) {
+    public RecipeController(RecipeServiceImpl recipeService) { this.recipeService = recipeService; }
 
-        this.recipeService = recipeService;
+
+    /**
+     * Endpoint create recipe
+     * http://localhost/api/recipe
+     * @param recipe
+     * @return
+     */
+    @PostMapping("/api/recipe")
+    public ResponseEntity<Recipe> create(@RequestBody Recipe recipe){
+
+        return recipeService.create(recipe);
     }
-
 
     /**
      * Endpoint list All recipe
@@ -42,19 +51,6 @@ public class RecipeController {
     public ResponseEntity<Recipe> getById(@PathVariable Long id) {
 
         return recipeService.getById(id);
-    }
-
-
-    /**
-     * Endpoint create recipe
-     * http://localhost/api/recipe
-     * @param recipe
-     * @return
-     */
-    @PostMapping("/api/recipe")
-    public ResponseEntity<Recipe> create(@RequestBody Recipe recipe){
-
-        return recipeService.create(recipe);
     }
 
     /**
